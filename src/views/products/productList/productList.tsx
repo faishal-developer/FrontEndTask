@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Product } from "@/types";
-import { useRouter, useSearchParams } from "next/navigation";
 
 interface ProductListProps {
   products: Product[];

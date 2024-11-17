@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Product } from "@/types";
 import { ProductModal } from "@/views/products/productModal/productModal";
 import { BackToHome } from "@/components/backToHome/backToHome";
@@ -27,7 +27,7 @@ export const Products: React.FC = () => {
 
   useEffect(()=>{
     if(modal || page){
-      let newSelected = paginatedProducts.find((item)=>item.id===modal)
+      const newSelected = paginatedProducts.find((item)=>item.id===modal)
       if(newSelected){
         setSelectedProduct(newSelected)
         router.push(`${window.location.pathname}?page=${page}&modal=${newSelected?.id}`);
