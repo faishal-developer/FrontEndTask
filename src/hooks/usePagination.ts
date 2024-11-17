@@ -15,7 +15,6 @@ export const usePagination = <T>({
   const searchParams = useSearchParams(); // Access query parameters
 
   const urlPage = searchParams.get('page');
-  const modal = searchParams.get('modal');
 
   const totalPages = useMemo(
     () => calculateTotalPages(items.length, itemsPerPage),

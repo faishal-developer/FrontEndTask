@@ -1,11 +1,8 @@
 "use client";
 
 import { BackToHome } from "@/components/backToHome/backToHome";
-import { useUserAgentContext } from "@/components/providers/userAgentProvider";
-import { GetServerSideProps } from "next";
 
 
-import { useEffect, useState } from "react";
 
 export const UserAgent = ({userAgent}:{userAgent:string}) => {
   // const { userAgent } = useUserAgentContext();
