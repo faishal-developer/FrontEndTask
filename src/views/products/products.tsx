@@ -26,14 +26,16 @@ export const Products: React.FC = () => {
   const page = searchParams.get('page');
 
   useEffect(()=>{
-    if(modal){
+    if(modal || page){
       let newSelected = paginatedProducts.find((item)=>item.id===modal)
       if(newSelected){
         setSelectedProduct(newSelected)
         router.push(`${window.location.pathname}?page=${page}&modal=${newSelected?.id}`);
+      }else{
+        setSelectedProduct(null)
       }
     }
-  },[paginatedProducts])
+  },[paginatedProducts,modal])
   
 
   const handleOpenModal = (product: Product) => {
